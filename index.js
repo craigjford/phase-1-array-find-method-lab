@@ -93,10 +93,10 @@ function findYear(win) {
 
 function superbowlWin(record) {
     const winYear = record.find(findYear);
-    if (winYear.year > ' ') {
-        return winYear.year;
-    } else {
+    if (typeof winYear === 'undefined') {
         return undefined;
+    } else {
+        return winYear.year;
     }
     
 }
