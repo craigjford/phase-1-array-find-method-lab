@@ -87,17 +87,19 @@ const record = [
 
 function findYear(win) {
     if (win.result === "W") {
-        console.log(`in if - ${win.year}`)
         return win.year;
     };
 }
 
 function superbowlWin(record) {
     const winYear = record.find(findYear);
-    console.log(`in superbowl ${winYear.year}`);
-    return winYear.year;
+    if (winYear.year > ' ') {
+        return winYear.year;
+    } else {
+        return undefined;
+    }
+    
 }
 
 let answer = superbowlWin(record);
-console.log(answer);
 
